@@ -1,17 +1,21 @@
 #flex
-
 CSS grid that is flexible in options (including the option to make the grid flexible)
 
-##Currently planning things out
-The whole 12 columns thing isn't working for my brain - everyone seems to have a different way to use margins and the 1 column with margins vs. 2 columns with margins creates a whole new mess. I want to be able to say:  
+##Grid
+The grid is made up of 12 columns, each 60px in size and having 10px margin on either side. This creates a 20px gutter between columns and 10px on either end.
 
-1,1,1,1,1,1,1,1,1,1,1,1  
-2,2,2,2,2,2  
-3,3,3,3  
-4,4,4  
-1,5,5,1  
-6,6  
-12  
-etc..
+###Core
+There are 3 core pieces to the grid: .container, .row, and .columnXX
+ - .container determines the size/flex of the grid and is the parent to .row
+ - .row is a vertical break - each .row is stacked on top of one another
+ - .columnXX is a horizontal block that can span 1-12 column(s) and is the parent of content on the page
 
-But try doing the 1's in a grid and things work fine, but then do the 2's and things don't work out fine. Margins seem to be an issue. So maybe just get rid of the margins and treat them as columns as well? And then re-arrange things? What if everything was the same size, like legos? Yes...that would work. Maybe I should try that next.
+###Basic 2 column example
+A basic layout split 50/50 on the grid looks like this:
+
+	<div class="container">
+		<div class="row">
+			<div class="column06">I'm the left side.</div>
+			<div class="column06">I'm the right side.</div>
+		</div>
+	</div>
